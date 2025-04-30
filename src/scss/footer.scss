@@ -1,0 +1,67 @@
+// .footer     ====================================================================================================
+.footer {
+  background-color: $mainColor;
+  color: $White;
+  padding-top: toRem(26);
+  padding-bottom: toRem(26);
+
+  // .footer__container
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(16);
+
+    @media (max-width:$mobileM){
+       flex-direction: column; 
+    }
+  }
+
+  // .footer__caption
+  &__caption {
+    font-weight: 500;
+  }
+
+  // .footer__socials
+  &__socials {
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: toRem(16);
+
+  // .socials__item
+  &__item {
+    @media (any-hover: hover) {
+      &:hover {
+        animation: wobble-hor-bottom 0.8s both;
+      }
+    }
+  }
+}
+
+@keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-7px) rotate(-4.5deg);
+  }
+  30% {
+    transform: translateX(5px) rotate(4.5deg);
+  }
+  45% {
+    transform: translateX(-5px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(3px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-1.2deg);
+  }
+}
+//====================================================================================================

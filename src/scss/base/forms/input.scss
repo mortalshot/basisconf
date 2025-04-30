@@ -1,0 +1,56 @@
+//<INPUT>
+// Сниппет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	width: 100%;
+	display: block;
+	padding: toRem(15) toRem(24);
+	caret-color: inherit;
+	border-radius: toRem(9) !important;
+	border: toRem(1.5) solid #b2b1b1;
+	outline: 0;
+	font-size: toRem(16);
+	letter-spacing: 0.01em;
+	color: #000;
+	transition: $transition ease border-color 0s;
+	@include adaptiveValue("min-height", 70, 56);
+
+	&:focus {
+		border-color: #3b69ea;
+	}
+
+	&.wpcf7-not-valid {
+		border-color: #dc3232;
+	}
+}
+.input[placeholder]:not([data-placeholder-nohiden]) {
+	&::placeholder {
+		transition: opacity 0.3s;
+	}
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+textarea.input {
+	resize: none;
+	padding: 0px 0px;
+}
+
+// cf7
+.wpcf7-not-valid-tip {
+	font-size: toRem(14);
+}
+
+.wpcf7-response-output {
+	color: #000;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}

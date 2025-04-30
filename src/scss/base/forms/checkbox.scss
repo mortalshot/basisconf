@@ -1,0 +1,70 @@
+.checkbox {
+	position: relative;
+	font-size: toRem(13);
+	line-height: math.div(18, 13);
+	color: #b2b1b1;
+
+	.wpcf7-list-item {
+		margin: 0 !important;
+	}
+
+	a {
+		color: #3b69ea;
+		text-decoration: underline transparent from-font;
+		text-underline-offset: 3px;
+		transition: $transition ease text-decoration 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline from-font;
+			}
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: em(5);
+	}
+
+	// .checkbox__input
+	&__input,
+	input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		&:focus-visible + .checkbox__label:before,
+		&:focus-visible + .wpcf7-list-item-label:before {
+			border-color: #3b69ea;
+		}
+		&:checked + .checkbox__label:before,
+		&:checked + .wpcf7-list-item-label:before {
+			background: #3b69ea;
+			border-color: #3b69ea;
+		}
+	}
+	// .checkbox__label
+	&__label,
+	.wpcf7-list-item-label {
+		cursor: pointer;
+		position: relative;
+		padding-left: toRem(34);
+
+		&:before {
+			content: "";
+			flex: 0 0 toRem(18);
+			width: toRem(18);
+			height: toRem(18);
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			border: 1px solid #b2b1b1;
+			border-radius: toRem(3);
+			transition: $transition ease all 0s;
+		}
+	}
+	// .checkbox__text
+	&__text {
+		align-self: center;
+	}
+}
